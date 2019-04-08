@@ -44,6 +44,19 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
+            'hash' => false,
+        ],
+        'admin/admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
+        'staff' => [
+            'driver' => 'session',
+            'provider' => 'staff',
+        ],
+        'end_user' => [
+            'driver' => 'session',
+            'provider' => 'end_user',
         ],
     ],
 
@@ -68,6 +81,18 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\admin::class,
+        ],
+        'staff' => [
+            'driver' => 'eloquent',
+            'model' => App\staff::class,
+        ],
+        'end_user' => [
+            'driver' => 'eloquent',
+            'model' => App\end_user::class,
         ],
 
         // 'users' => [

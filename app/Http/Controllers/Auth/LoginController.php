@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -25,7 +27,29 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+
+    protected function authenticated(Request $request, $user)
+    {
+        $role = $user->role;
+
+        if ($role == 1) {
+            return redirect()->intended('account/admin');
+        }
+        if ($role == 2) {
+            return redirect()->intended('accountstaff');
+        }
+        if ($role == 3) {
+            return redirect()->intended('account/end_user');
+        }
+
+    }
+
+   /* public function authenticate() {
+        if (Auth::attempt(['email'=>$email,'password'=>$password])) {
+            return "hello";
+        }
+    }*/
 
     /**
      * Create a new controller instance.
@@ -35,5 +59,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:staff')->except('logout');
+        $this->middleware('guest:end_user')->except('logout');
     }
 }

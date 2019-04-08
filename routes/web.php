@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +11,31 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('publichomepage');
+});
+Route::get('account/admin', function () {
+    if (Auth()->check() && auth::user()->role == 1) {
+		return view('admin/homepage');
+	}else{
+		return redirect()->route('login');
+	}
+});
+
+Route::get('account/staff', function () {
+    if (Auth()->check() && auth::user()->role == 2) {
+		return view('staff/homepage');
+	}else{
+		return redirect()->route('login');
+	}
+});
+Route::get('account/end_user', function () {
+	if (Auth()->check() && auth::user()->role == 3) {
+		return view('end_user/homepage');
+	}else{
+		return redirect()->route('login');
+	}
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
