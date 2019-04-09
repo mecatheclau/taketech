@@ -11,10 +11,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 
     <!-- mian-content -->
-    <div class="main-banner" id="home">
-        <div class="bg-overlay">
-
-        </div>
+<div class="main-banner" id="home">
+    <div class="bg-overlay">
+    	hfhfhfh
     </div>
+</div>
 
 @stop

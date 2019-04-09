@@ -23,8 +23,12 @@
 </head>
 <body>
     <div id="app main-banner">
-            <div class="header-agile" style="background-color: transparent;">
+            <div class="header-agile w-100">
                 <a href="/">{{ config('app.name') }}</a>
+                <div class="float-right">
+                    <a href="{{ url('register') }}">Register</a>
+                    <a href="{{ url('login') }}">Login</a>
+                </div>
             </div>
         <div class="bg-overlay">
 

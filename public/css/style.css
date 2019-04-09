@@ -8,6 +8,7 @@
 html,
 body {
     margin: 0;
+    padding: 0;
     font-size: 100%;
     background: #fff;
     font-family: 'Raleway', sans-serif;
@@ -63,9 +64,9 @@ ul {
     margin: 0;
     padding: 0;
 }
-
 /*--/banner --*/
 .main-banner {
+    background-color: red;
     background-image: url(../images/banner.jpg);
     background-repeat: repeat-x;
     animation: slideleft 20000s infinite linear;
@@ -75,27 +76,17 @@ ul {
     -moz-background-size: cover;
     background-attachment: fixed;
     position: relative;
-    min-height: 50em;
 }
 
 .bg-overlay {
     background: rgba(0, 0, 0, 0.7);
-    min-height: 50em;
+    min-height: 34.8em;
 }
 
 .header-agile {
     margin-right: 3em;
 }
-
-a.navbar-brand {
-    font-size: 1em;
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    text-transform: capitalize;
-    letter-spacing: 1px;
-    position: relative;
-}
+.center-card{margin: auto;}
 /*-- slide --*/
 
 @keyframes slideleft {
