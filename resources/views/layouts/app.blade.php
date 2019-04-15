@@ -22,14 +22,17 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app main-banner">
-            <div class="header-agile" style="background-color: transparent;">
-                <a href="/">{{ config('app.name') }}</a>
+<div class="app">
+    <div id="container">
+        <div class="header w-100">
+            <div class="float-left col-md-4" ><a href="{{ url('/') }}">{{ config('app.name') }}</a></div>
+            <div class="float-right col-md-8" style="text-align:right">
+                <a href="{{ route('register') }}">Register</a>
+                <a href="{{ route('login') }}">Login</a>
             </div>
-        <div class="bg-overlay">
-
-            @yield('content')
         </div>
+            @yield('content')
     </div>
+</div>
 </body>
 </html>

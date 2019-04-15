@@ -1,10 +1,3 @@
-/*--
-    Author:W3layouts
-    Author URL: http://w3layouts.com
-    License: Creative Commons Attribution 3.0 Unported
-    License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-
 html,
 body {
     margin: 0;
@@ -40,31 +33,9 @@ input[type="search"] {
     -ms-transition: 0.5s all;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-p {
-    font-size: 0.9em;
-    color: #777;
-    line-height: 1.9em;
-    letter-spacing: 1px;
-    margin-bottom: 0;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
 
 /*--/banner --*/
+
 .main-banner {
     background-image: url(../images/banner.jpg);
     background-repeat: repeat-x;
@@ -83,26 +54,20 @@ ul {
     min-height: 50em;
 }
 
-.header-agile {
-    margin-right: 3em;
+.header {
+    position: absolute;
+    padding: 15px auto;
+    z-index: 2;
+    font-size: 25px
 }
 
-a.navbar-brand {
-    font-size: 1em;
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    text-transform: capitalize;
-    letter-spacing: 1px;
-    position: relative;
-}
+
 /*-- slide --*/
 
 @keyframes slideleft {
     from {
         background-position: 0%;
     }
-
     to {
         background-position: 90000%;
     }
@@ -112,10 +77,10 @@ a.navbar-brand {
     from {
         background-position: 0%;
     }
-
     to {
         background-position: 90000%;
     }
 }
+
 
 /*--//banner --*/
