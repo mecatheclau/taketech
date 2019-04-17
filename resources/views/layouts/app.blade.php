@@ -25,8 +25,8 @@
 <div class="app">
     <div id="container">
         <div class="header w-100">
-            <div class="float-left col-md-4" ><a href="{{ url('/') }}">{{ config('app.name') }}</a></div>
-            <div class="float-right col-md-8" style="text-align:right">
+            <div class="float-left col-md-4 col-sm-4" ><a href="{{ url('/') }}">{{ config('app.name') }}</a></div>
+            <div class="float-right col-md-8 col-sm-8" style="text-align:right">
                 <a href="{{ route('register') }}">Register</a>
                 <a href="{{ route('login') }}">Login</a>
             </div>    

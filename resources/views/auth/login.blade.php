@@ -3,10 +3,10 @@
 @section('title', 'Logging in')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+<div class="main-banner">
+    <div class="row justify-content-center bg-overlay">
+        <div class="col-md-8 center-card">
+            <div class="card" style="background-color: rgba(80,80,80,.7);">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
