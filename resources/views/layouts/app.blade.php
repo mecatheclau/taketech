@@ -29,9 +29,9 @@
             <div class="float-right col-md-8" style="text-align:right">
                 <a href="{{ route('register') }}">Register</a>
                 <a href="{{ route('login') }}">Login</a>
-            </div>
+            </div>    
         </div>
-            @yield('content')
+        @yield('content')
     </div>
 </div>
 </body>
