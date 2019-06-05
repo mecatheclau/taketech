@@ -14,11 +14,11 @@ class rolesTableSeeder extends Seeder
         //
         DB::table('roles')->insert([
             'id'=>1,
-        	'role'=>'admin'
+        	'role'=>'superadmin'
         ]);
         DB::table('roles')->insert([
             'id'=>2,
-        	'role'=>'staff'
+        	'role'=>'admin'
         ]);
         DB::table('roles')->insert([
             'id'=>3,

@@ -37,7 +37,7 @@ class LoginController extends Controller
             return redirect()->intended('account/admin');
         }
         if ($role == 2) {
-            return redirect()->intended('accountstaff');
+            return redirect()->intended('account/staff');
         }
         if ($role == 3) {
             return redirect()->intended('account/end_user');

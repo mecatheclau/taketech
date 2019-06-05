@@ -39,7 +39,8 @@ Route::get('account/end_user', function () {
 		return redirect()->route('login');
 	}
 });
-
+Route::get('checkpayment/viewslip','BankSlipController@viewslip');
+Route::get('checkpayment/student-no','BankSlipController@search');
 Auth::routes();
-
+Route::resource('bankslip','BankSlipController');
 //Route::get('/home', 'HomeController@index')->name('home');

@@ -14,9 +14,20 @@ class UsersTableSeeder extends Seeder
         //
         DB::table('users')->insert([
             'id'=>1,
-            'name'=>'meca',
-        	'email'=>'maniragabaclaude@gmail.com',
-        	'password'=>bcrypt('espagnol21'),
+            'firstname'=>'karuganda1',
+            'lastname'=>'secondary',
+        	'email'=>'karuganda1@gmail.com',
+        	'password'=>bcrypt('karuganda1'),
+        	'role' => 2,
+        	'created_at' => date("2019-01-02 19:31:19"),
+        	'updated_at' => date("2019-01-02 19:31:19")
+        ]);
+        DB::table('users')->insert([
+            'id'=>2,
+            'firstname'=>'karuganda',
+            'lastname'=>'secondary',
+        	'email'=>'karuganda@gmail.com',
+        	'password'=>bcrypt('karuganda'),
         	'role' => 1,
         	'created_at' => date("2019-01-02 19:31:19"),
         	'updated_at' => date("2019-01-02 19:31:19")

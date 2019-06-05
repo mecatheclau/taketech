@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="main-banner">
+    <div class="row justify-content-center bg-overlay">
+        <div class="col-md-8 center-card">
             <div class="card">
                 <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 

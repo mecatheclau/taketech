@@ -12,6 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @yield('scripts')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,12 +25,31 @@
 <body>
 <div class="app">
     <div id="container">
-        <div class="header w-100">
-            <div class="float-left col-md-4 col-sm-4" ><a href="{{ url('/') }}">{{ config('app.name') }}</a></div>
-            <div class="float-right col-md-8 col-sm-8" style="text-align:right">
-                <a href="{{ route('register') }}">Register</a>
+        <div class="row">
+            <div class="logo w-100">
+                <img src="{{ asset('images/krg.png') }}" alt="karuganda logo" srcset="" class="klogo float-left">
+                <div class="col-md-6 float-right">
+                    <h1>ECOLE SECONDAIRE SAINT JOSEPH KARUGANDA</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="menubar w-100">
+                <div>
+                <a href="{{ url('/') }}">Home</a>
+                @guest
+                <a href="{{ url('contact_us') }}">Contact us</a>
                 <a href="{{ route('login') }}">Login</a>
-            </div>    
+                @else
+                <a href="{{ route('bankslip.create') }}">Record-slip</a>
+                <a href="{{ url('checkpayment/viewslip') }}">check-payment</a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+                @endguest
+                </div>
+            </div>
         </div>
         @yield('content')
     </div>
