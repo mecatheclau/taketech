@@ -25,33 +25,44 @@
 <body>
 <div class="app">
     <div id="container">
-        <div class="row">
-            <div class="logo w-100">
-                <img src="{{ asset('images/krg.png') }}" alt="karuganda logo" srcset="" class="klogo float-left">
-                <div class="col-md-6 float-right">
-                    <h1>ECOLE SECONDAIRE SAINT JOSEPH KARUGANDA</h1>
+        <div class="bg-black">
+            <div class="row">
+                <div class="logo w-100">
+                    <img src="{{ asset('images/krg.png') }}" alt="karuganda logo" srcset="" class="klogo float-left">
+                    <SPAN style="color:white">ECOLE SECONDAIRE SAINT JOSEPH KARUGANDA</SPAN>
+                    <span class="text-danger">ONLINE STUDENT MANAGMENT AND PAYMENT FEES</span>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="menubar w-100">
-                <div>
-                <a href="{{ url('/') }}">Home</a>
-                @guest
-                <a href="{{ url('contact_us') }}">Contact us</a>
-                <a href="{{ route('login') }}">Login</a>
-                @else
-                <a href="{{ route('bankslip.create') }}">Record-slip</a>
-                <a href="{{ url('checkpayment/viewslip') }}">check-payment</a>
-                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-                @endguest
+        <div style="background-color: rgba(50,50,50,.5)">
+            <div class="row">
+                <div class="menubar w-100">
+                    <div>
+                    <a href="{{ url('/') }}">Home</a>
+                    @guest
+                    <a href="{{ url('contact_us') }}">Contact us</a>
+                    <a href="{{ route('login') }}">Login</a>
+                    @else
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                    @endguest
+                    </div>
                 </div>
             </div>
         </div>
+        
         @yield('content')
+
+        <div class="row">
+            <div class="footer w-100">
+                <div class="text-center">
+                    &copycopyright 2019 Karuganda
+                </div>
+            </div>
+        </div>
+            
     </div>
 </div>
 </body>

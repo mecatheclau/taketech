@@ -1,13 +1,33 @@
 body {
-    background-color: rgb(255, 135, 22)
+    background-color: rgb(255, 255, 255)
+}
+.bg-black {
+    background-color: #000;
+}
+.footer {
+    padding: 5px;
+    position: relative;
+    bottom: 0px;
+    font-size: 26px
+}
+.sider {
+    background-color: #4e73df;
+    min-height: 80vh;
 }
 .logo {
     height: 200px;
+}
+.logo span {
+    padding: 5px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
 }
 .logo img{
     max-height: 200px;
     width: auto;
 }
+
 .p-0{padding: 0} .p-2{padding: 2px}
 .m-0{margin: 0} .m-2{margin: 2px} .m-4{margin: 4px;}
 .row {
@@ -28,7 +48,8 @@ body {
     padding: 2px;
     font-size: 20px;
     font-weight: bolder;
-    color: rgb(240, 222, 195)
+    color: rgb(240, 222, 195);
+    text-shadow: 2px 2px #000;
 }
 .menubar a:hover {
     background-color: rgb(196, 142, 107);
@@ -58,4 +79,74 @@ body {
     background-color: #000;
     color: #fff;
     border: 1px solid rgb(146, 141, 141);
+}
+.nav-item a{
+    text-decoration: none;padding: 5px;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    text-align: left;
+    border: 1px dotted rgb(168, 166, 166)
+}
+.nav-item a:hover {
+    background-color: rgb(207, 204, 204);
+    color: #fff
+}
+.crd {
+    height: 100px;
+    width: 40%;
+    float: left;
+    display: inline-block
+    border-top: 1px solid #232324;
+    border-left: 4px solid #1d4bd4;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgb(76, 75, 75);
+}
+
+@media only screen and (max-width:780px) {
+    .logo {
+        height: auto
+    }
+    .logo img {
+        display: none;
+    }
+    .logo span {
+        font-size: 100%;
+    }
+    .row {
+        margin: 0px;
+        padding: 0px;
+    }
+    .sider {
+        min-height: auto;
+    }
+    .record-form {
+        margin: 0
+    }
+    .record-form  div  input[type=text] {
+        float: left;
+        width: 100%;
+    }
+    .whiteboard {
+        text-align: left;
+    }
+}
+@media only screen and (min-width:780px) and (max-width:1200px){
+    .logo span {
+        font-size: 25px
+    }
+    .sider {
+        min-height: auto;
+    }
+    .record-form {
+        margin: 0
+    }
+    .record-form  div  input[type=text] {
+        float: left;
+        width: 100%;
+    }
+    .row {
+        margin-right: 90px;
+        margin-left: 90px;
+    }
 }

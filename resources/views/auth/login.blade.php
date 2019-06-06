@@ -3,11 +3,11 @@
 @section('title', 'Logging in')
 
 @section('content')
-<div class="" style="margin-top:6px">
+<div class="" style="margin-top:6px;bg-warning">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header bg-info">{{ __('Administration Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
