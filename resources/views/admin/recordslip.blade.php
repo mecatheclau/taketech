@@ -1,14 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', 'insert new slip')
 
 @section('content')
 
 <!-- mian-content -->
-<div class="row">
-    <div class="col-md-3 sider float-left p-0">
-        @include('sider')
-    </div>
+<div class="content-wrapper">
     <div class="col-md-9 float-right">
         <div class="p-0 whiteboard">
             <div class="col-md-12 col-sm-12 text-center">

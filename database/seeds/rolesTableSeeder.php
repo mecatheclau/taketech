@@ -24,5 +24,10 @@ class rolesTableSeeder extends Seeder
             'id'=>3,
         	'role'=>'end_user'
         ]);
+
+        DB::table('roles')->insert([
+            'id'=>4,
+        	'role'=>'student'
+        ]);
     }
 }

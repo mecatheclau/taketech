@@ -17,28 +17,12 @@
 Route::get('/', function () {
     return view('publichomepage');
 });
-Route::get('account/admin', function () {
-    if (Auth()->check() && auth::user()->role == 1) {
-		return view('admin/homepage');
-	}else{
-		return redirect()->route('login');
-	}
+Route::get('contact_us', function () {
+    return view('contact_us');
 });
 
-Route::get('account/staff', function () {
-    if (Auth()->check() && auth::user()->role == 2) {
-		return view('staff/homepage');
-	}else{
-		return redirect()->route('login');
-	}
-});
-Route::get('account/end_user', function () {
-	if (Auth()->check() && auth::user()->role == 3) {
-		return view('end_user/homepage');
-	}else{
-		return redirect()->route('login');
-	}
-});
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('checkpayment/viewslip','BankSlipController@viewslip');
 Route::get('checkpayment/student-no','BankSlipController@search');
 Auth::routes();

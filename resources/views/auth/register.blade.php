@@ -1,10 +1,65 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="main-banner">
-    <div class="row justify-content-center bg-overlay">
-        <div class="col-md-8 center-card" >
-            <div class="card" style="background-color: rgba(80,80,80,.7);">
+    <!-- inner banner -->
+    <div class="inner-banner-w3ls py-5" id="home">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- register  -->
+            <div class="modal-body mt-md-2 mt-5">
+                <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Register Now</h3>
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="form-group">
+                        <label class="col-form-label">Firstname</label>
+                        <input type="text" class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" placeholder="your name" name="lastname" required="">
+                        @if ($errors->has('firstname'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('firstname') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Lastname</label>
+                        <input type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" placeholder="your name" name="lastname" required="">
+                        @if ($errors->has('lastname'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('lastname') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Email</label>
+                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="loremipsum@email.com" name="email"
+                            required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Password</label>
+                        <input type="password" class="form-control" placeholder="*****" name="Password" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="*****" name="Password" required="">
+                    </div>
+                    <div class="sub-w3l my-3">
+                        <div class="sub-w3layouts_hub">
+                            <input type="checkbox" id="brand1" value="">
+                            <label for="brand1" class="text-li text-style-w3ls">
+                                <span></span>I Accept to the Terms & Conditions</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn button-style-w3">Register</button>
+                </form>
+            </div>
+            <!-- //register -->
+        </div>
+    </div>
+    <!-- //inner banner -->
+
+    <h1>the second</h1>
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 padding-64">
+            <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -12,24 +67,10 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="firstname" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="firstname" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
