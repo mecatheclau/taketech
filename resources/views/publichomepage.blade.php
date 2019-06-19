@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Acountant page')
+@section('title', 'Welcome to E.S.karuganda')
 
 @section('content')
 
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="style-banner mx-auto">
             <h3 class="text-wh font-weight-bold">Welcome to <span>Saint Joseph Karuganda secondary school</span> <br>High quality Education</h3>
-            <p class="mt-3 text-li" id="join">Join the My School now</p>
+            <p class="mt-3 text-li" id="join">SCIENCE PROGRESS LIGHT</p>
         </div>
     </div>
 </div>

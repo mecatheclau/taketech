@@ -6,70 +6,57 @@
 
 <!-- mian-content -->
 <div class="content-wrapper">
-    <div class="col-md-9 float-right">
-        <div class="p-0 whiteboard">
-            <div class="col-md-12 col-sm-12 text-center">
-                <h1><u>Record new bank slip </u> </h1>
-                <div >
-                    <form class="record-form" action="{{ route('bankslip.store') }}" method="POST" class="form-field">
-                        @csrf()
-                        <div class="row p-0 m-4">
-                            <div class="col-md-4 float-left">
-                                <label for="user">ID:</label>
-                            </div>
-                            <div class="col-md-8 float-right">
-                                <input type="text" name="student" placeholder="Student id" id="">
-                            </div>
-                        </div>
-                        <div class="row p-0 m-4">
-                            <div class="col-md-4 float-left">
-                                <label for="user">Academy:</label>
-                            </div>
-                            <div class="col-md-8 float-right">
-                                <input type="text" name="academy" placeholder="academic year" id="">
-                            </div>
-                        </div>
-                        <div class="row p-0 m-4">
-                            <div class="col-md-4 float-left">
-                                <label for="user">Class:</label>
-                            </div>
-                            <div class="col-md-8 float-right">
-                                <input type="text" name="class" placeholder="class" id="">
-                            </div>
-                        </div>
-                        <div class="row p-0 m-4">
-                            <div class="col-md-4 float-left">
-                                <label for="user">BAnk name:</label>
-                            </div>
-                            <div class="col-md-8 float-right">
-                                <input type="text" name="bank" placeholder="Bank name" id="">
-                            </div>
-                        </div>
-                        <div class="row p-0 m-4">
-                            <div class="col-md-4 float-left">
-                                <label for="user">ref n<sup>o</sup>:</label>
-                            </div>
-                            <div class="col-md-8 float-right">
-                                <input type="text" name="reference" placeholder="reference no" id="">
-                            </div>
-                        </div>
-                        <div class="row p-0 m-4">
-                            <div class="col-md-4 float-left">
-                                <label for="user">Amount:</label>
-                            </div>
-                            <div class="col-md-8 float-right">
-                                <input type="text" name="amount" placeholder="amount" id="">
-                            </div>
-                        </div>
-                        <div class="row p-2">
-                            <button type="submit" class="btn btn-primary w-100">record slip</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <!-- general form elements -->
+        <div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title"><u>Record new bank slip </u></h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form class="record-form" action="{{ route('bankslip.store') }}" method="POST" class="form-field">
+        @csrf()
+        <div class="box-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Student id</label>
+            <input type="text" name="student" placeholder="Student id" class="form-control" id="exampleInputEmail1" placeholder="Enter student id">
         </div>
-    </div>    
-</div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Academy year</label>
+            <input type="text" name="academy" class="form-control" id="exampleInputPassword1" placeholder="Academy year">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Class</label>
+            <input type="text" name="class"  class="form-control" id="exampleInputEmail1" placeholder="Enter student class">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ref n<sup>o</sup>:</label>
+            <input type="text" name="reference" placeholder="reference number" class="form-control" id="exampleInputEmail1" >
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">BAnk name:</label>
+            <input type="text" name="bank" class="form-control" id="exampleInputPassword1" placeholder="Enter BAnk name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Amount</label>
+            <input type="text" name="amount" class="form-control" id="exampleInputPassword1" placeholder="Amount">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
 
+        </div>
+        <div class="checkbox">
+            <label>
+            <input type="checkbox"> Check to agree before send
+            </label>
+        </div>
+        </div>
+        <!-- /.box-body -->
 
+        <div class="box-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    </div>
+    <!-- /.box -->
 @stop
