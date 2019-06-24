@@ -83,18 +83,34 @@ class BankSlipController extends Controller
         $class = $request->input('class');
         $bank = $request->input('bank');
         $ref = $request->input('reference');
+        $pdate = $request->input('pay_date');
+        $tel = $request->input('telephone');
         $amount = $request->input('amount');
 
+        if ($request->hasFile('hardcopy')) {
+            $attachment = request()->file('hardcopy');
+            $file = $attachment->getClientOriginalName();
+            $imageurl = "images/".$file;
+            $copy = move_uploaded_file($attachment, $imageurl);
+            if ($copy) {
+                $record->attachment = $file;
+            }else {
+                $record->attachment = "N/A";
+            }
+        }
+        
         $record->student = $student;
         $record->academy = $academy;
         $record->class = $class;
         $record->bank = $bank;
+        $record->pay_date = $pdate;
         $record->reference_no = $ref;
+        $record->telephone = $tel;
         $record->amount = $amount;
 
         $save = $record->save();
         if ($save) {
-            echo "recorded!";
+            return redirect()->back()->with(['message' => 'recorded successfully']);
         }
         
     }

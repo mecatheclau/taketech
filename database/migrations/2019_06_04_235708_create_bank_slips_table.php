@@ -21,7 +21,10 @@ class CreateBankSlipsTable extends Migration
             $table->string('class');
             $table->string('bank');
             $table->string('reference_no');
+            $table->timestamp('pay_date');
             $table->integer('amount');
+            $table->integer('telephone');
+            $table->string('attachment');
             $table->timestamps();
         });
     }
