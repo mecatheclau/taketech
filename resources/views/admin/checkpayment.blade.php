@@ -25,13 +25,13 @@
         <div class="row">
        
             <!-- ./col -->
-            <h3>Use the student Id to quickly search for any student</h3>
-            <form class="record-form" action="{{ url('checkpayment/student-no') }}" method="POST" class="form-field">
-                @csrf()
+            <h3>Use the student Id,class to quickly search for any student</h3>
+            <form action="{{ url('checkpayment/student-no') }}" method="POST" class="record-form" class="form-field">
+                @csrf
                 <div class="box-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Student id</label>
-                    <input type="text" name="student" placeholder="Student id" class="form-control" id="exampleInputEmail1" placeholder="Enter student id">
+                    <input type="search" name="q"class="form-control" id="exampleInputEmail1" placeholder="Enter student id">
                 </div>
 
                 <div class="box-footer">

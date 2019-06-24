@@ -24,7 +24,7 @@ Route::get('contact_us', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('checkpayment/viewslip','BankSlipController@viewslip');
-Route::get('checkpayment/student-no','BankSlipController@search');
+Route::any('checkpayment/student-no','BankSlipController@search');
 Auth::routes();
 Route::resource('bankslip','BankSlipController');
 //Route::get('/home', 'HomeController@index')->name('home');

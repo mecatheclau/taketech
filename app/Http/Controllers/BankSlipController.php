@@ -30,16 +30,12 @@ class BankSlipController extends Controller
     }
     public function search(Request $request)
     {
-        //
-        $this->validate(request(),[
-            'student'=>'required',
-        ]);
             
-        $student = $request->input('student');
+        $q = $request->input('q');
         $data = DB::table('bank_slips')
             ->select('bank_slips.*','users.*')
             ->join('users','users.id','=','bank_slips.student')
-            ->where('bank_slips.student',$student)->get();
+            ->where('bank_slips.student',$q)->orWhere('bank_slips.class',$q)->get();
         return view('admin/result',[
             'data' => $data,
         ]);
