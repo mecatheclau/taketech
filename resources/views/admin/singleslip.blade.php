@@ -38,7 +38,7 @@
                             <td>{{ $result->bank }}</td>
                             <td>{{ $result->amount }}</td>
                             <td>
-                                <a href="{{ route('bankslip.show',['id'=>$result->id]) }}" class="bg-info btn text-light"><i class="fa fa-eye"> view</i></a>
+                                <a class="bg-info btn text-light"><i class="fa fa-eye"> view</i></a>
                                 <a class="bg-success btn text-light"><i class="fa fa-pencil"> update</i></a>
                                 <a class="bg-danger btn text-light"><i class="fa fa-remove"> delete</i></a>
                             </td>

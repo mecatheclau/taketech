@@ -1,22 +1,10 @@
-@extends('layouts.admin')
+@extends('layouts.print')
 
 @section('title', 'insert new slip')
 
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-        Dashboard
-        <small>view student</small>
-        </h1>
-        <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-        </ol>
-    </section>
 
     <!-- Main content -->
     <section class="content">
@@ -38,26 +26,15 @@
                             <td>{{ $result->bank }}</td>
                             <td>{{ $result->amount }}</td>
                             <td>
-                                <a href="{{ route('bankslip.show',['id'=>$result->id]) }}" class="bg-info btn text-light"><i class="fa fa-eye"> view</i></a>
+                                <a class="bg-info btn text-light"><i class="fa fa-eye"> view</i></a>
                                 <a class="bg-success btn text-light"><i class="fa fa-pencil"> update</i></a>
                                 <a class="bg-danger btn text-light"><i class="fa fa-remove"> delete</i></a>
                             </td>
                         </tr>
 
                         @endforeach
-                        </tbody>
                     </table>
-                    <div class="btn">
-                        <form action="{{ url('exportdata/saveexcel') }}" method="get">
-                            @csrf
-                            <button type="submit" id="btnExport" name='q'
-                                value="{{ $q }}" class="btn btn-info">Export to
-                                excel</button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
-</div>
-@stop
+</section>
