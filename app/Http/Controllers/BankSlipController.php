@@ -33,7 +33,7 @@ class BankSlipController extends Controller
             
         $q = $request->input('q');
         $data = DB::table('bank_slips')
-            ->select('bank_slips.*','users.*')
+            ->select('bank_slips.slip_id','bank_slips.student','bank_slips.academy','bank_slips.class','bank_slips.bank','bank_slips.amount','users.id','users.firstname','users.lastname')
             ->join('users','users.id','=','bank_slips.student')
             ->where('bank_slips.student',$q)->orWhere('bank_slips.class',$q)->get();
         return view('admin/result',[
@@ -144,7 +144,7 @@ class BankSlipController extends Controller
         $data = DB::table('bank_slips')
         ->select('bank_slips.*','users.*')
         ->join('users','users.id','=','bank_slips.student')
-        ->where('bank_slips.id',$id)->orWhere('bank_slips.class',$id)->get();
+        ->where('bank_slips.slip_id',$id)->orWhere('bank_slips.class',$id)->get();
         return view('admin/singleslip',[
             'data' => $data,
             'q' => $id,
