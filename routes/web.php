@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('checkpayment/viewslip','BankSlipController@viewslip');
 Route::any('checkpayment/student-no','BankSlipController@search');
+Route::any('exportdata/saveexcel/{q}','BankSlipController@exportExcel');
 Auth::routes();
 Route::resource('bankslip','BankSlipController');
 //Route::get('/home', 'HomeController@index')->name('home');

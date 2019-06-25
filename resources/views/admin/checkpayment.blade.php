@@ -26,7 +26,7 @@
        
             <!-- ./col -->
             <h3>Use the student Id,class to quickly search for any student</h3>
-            <form action="{{ url('checkpayment/student-no') }}" method="POST" class="record-form" class="form-field">
+            <form action="{{ url('checkpayment/student-no') }}" method="GET" class="record-form" class="form-field">
                 @csrf
                 <div class="box-body">
                 <div class="form-group">

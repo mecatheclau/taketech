@@ -40,6 +40,33 @@ class BankSlipController extends Controller
             'data' => $data,
         ]);
     }
+
+    public function exportExcel(Request $request) 
+    {
+        $q = $request->input('q');
+
+        $data = DB::table('bank_slips')
+            ->select('bank_slips.*','users.*')
+            ->join('users','users.id','=','bank_slips.student')
+            ->where('bank_slips.student',$q)->orWhere('bank_slips.class',$q)->get();
+
+        if ($request->input('export')) {
+            $filename = "Export_excel.xls";
+            header("Content-Type: application/vnd.ms-excel");
+            header("Content-Disposition: attachment; filename=\"$filename\"");
+            $isPrintHeader = false;
+            if (! empty($data)) {
+                foreach ($data as $row) {
+                    if (! $isPrintHeader) {
+                        echo implode("\t", array_keys($row)) . "\n";
+                        $isPrintHeader = true;
+                    }
+                    echo implode("\t", array_values($row)) . "\n";
+                }
+            }
+            exit();
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

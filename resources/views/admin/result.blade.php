@@ -38,15 +38,23 @@
                             <td>{{ $result->bank }}</td>
                             <td>{{ $result->amount }}</td>
                             <td>
-                                <a class="bg-info btn text-light"><i class="fa fa-open">view</i></a>
-                                <a class="bg-success btn text-light"><i class="fa fa-pencil"></i></a>
-                                <a class="bg-danger btn text-light"><i class="fa fa-remove"></i></a>
+                                <a class="bg-info btn text-light"><i class="fa fa-eye"> view</i></a>
+                                <a class="bg-success btn text-light"><i class="fa fa-pencil"> update</i></a>
+                                <a class="bg-danger btn text-light"><i class="fa fa-remove"> delete</i></a>
                             </td>
                         </tr>
 
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="btn">
+                        <form action="{{ url('exportdata/saveexcel',['q'=>$result->id]) }}" method="get">
+                            @csrf
+                            <button type="submit" id="btnExport" name='export'
+                                value="Export to Excel" class="btn btn-info">Export to
+                                excel</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

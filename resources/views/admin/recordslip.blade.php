@@ -43,6 +43,15 @@
                     <input type="text" name="class"  class="form-control" id="exampleInputEmail1" placeholder="Enter student class">
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Term</label>
+                    <select name="term" id="exampleInputEmail1" class="form-control" require>
+                        <option >term</option>
+                        <option value="1">1st term</option>
+                        <option value="2">2nd term</option>
+                        <option value="3">3rd term</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="exampleInputEmail1">Ref n<sup>o</sup>:</label>
                     <input type="text" name="reference" placeholder="reference number" class="form-control" id="exampleInputEmail1" >
                 </div>
